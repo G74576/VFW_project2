@@ -1,0 +1,91 @@
+<!doctype html>
+<!-- Kevin O'Toole -->
+<!-- VFW 1303 -->
+<!-- Project 1 -->
+
+<html>
+	<!-- Document Head inclues what charactores the site will use, short description, key words for search engines
+	information on how mobile devices will use the site, and page title-->
+	<head> 
+		<meta charset="utf-8" /> 
+		<meta name="description" content="This is a compilation of the O'Toole and Leone family recipes." />
+		<meta name="keywords" content="recipes, otoole, leone, italian, irish, german" />
+		<meta name="robots" contents="index follow" /> 
+		<meta name="viewport" content="user-scalable=no, width=device-width" />
+		<meta name="viewport" content="target-densitydpi=device-dpi" />
+		<meta name="HandheldFriendly" content="True">
+		<meta name="MobileOptimezed" content="320"/>
+		<title>Add A Recipe</title>
+	</head>
+	<!-- Document Body -->
+	<body>
+		<header>
+			<hdgroup>
+				<h1>O&#39;Toole &amp; Leone Family Recipes&#33;</h1>
+				<h2>Add your own recipe to our family cookbook&#46;</h2>
+			</hdgroup>
+		</header>
+		<form id="addRecipe" action="#" method="post"> 
+			<fieldset>
+				<legend>Your Information</legend>
+					<ul>
+						<li><label for="fname">First Name&#58;</label><input type="text" id="fname" /></li>
+						<li><label for="lname">Last Name&#58;</label><input type="text" id="lname" /></li>
+						<li><label for="todaysDate">Todays Date&#58;</label><input type="date" id="todaysDate" /></li>
+						<li>Are you part of the family&#63;
+							<ul>
+								<li><input type="radio" value="Yes" id="yes" name="relative"/><label for="yes">Yes</label>
+									<input type="radio" value="No" id="no" name="relative" /><label for="no">No</label>
+								</li>
+							</ul>
+						</li>
+						<li><label for="emai">Email&#58;</label><input typye="email" id="email" placeholder="example@email.com" /></li>
+					</ul>
+			</fieldset>
+			<fieldset>
+				<legend>Your Recipe</legend>
+					<ul>
+						<li><label for="type">What type of recipe will this be&#63;</label><br />
+							<select id="type">
+								<optgroup>
+									<option value="breakfast">Breakfast</option>
+									<option value="lunch">Lunch</option>
+									<option value="dinner">Dinner</option>
+									<option value="appetizer">Appetizer</option>
+									<option value="dessert">Dessert</option>
+									<option value="drink">Drink</option>
+								<optgroup>
+							</select>
+						</li>
+						<li><label for="range">Select the level of difficulty&#58;</label><br />
+							<small>&#40;Easy&#41;</small><input type="range" min="1" max="10" name="range" id="range" /><small>&#40;Difficult&#41;</small>
+						</li>
+						<li>When do you make this&#63;<br />
+							<small>&#40;Check all that apply&#41;</small>
+						</li>
+							<ul>
+								<li><input type="checkbox" value="Valentines" id="valentines" /><label for="valentines">Valentines</label></li>
+								<li><input type="checkbox" value="Easter" id="easter" /><label for="easter">Easter</label></li>
+								<li><input type="checkbox" value="Halloween" id="halloween" /><label for="halloween">Halloween</label></li>
+								<li><input type="checkbox" value="Thanksgiving" id="thanksgiving" /><label for="thanksgiving">Thanksgiving</label></li>
+								<li><input type="checkbox" value="Christmas" id="christmas" /><label for="christmas">Christmas</label></li>
+								<li><input type="checkbox" value="Birthdays" id="birthdays" /><label for="birthdays">Birthdays</label></li>
+								<li><input type="checkbox" value="Other" id="other" /><label for="other">Other</label>
+									<input type="text" id="specify" /></li>
+							</ul>
+						<li><label for="time">Cooking Time&#58;</label><input type="text" id="time" /></li>
+						<li><label for="temperature">Temperature&#58;</label><input type="text" id="temperature" /></li>
+						<li><label for="directions">Cooking Directions&#58;</label><br />
+							<textarea id="directions"></textarea>
+						</li>
+						<input type="hidden" value="true" />
+					</ul>
+			</fieldset>
+				<input type="submit" value="Submit Your Recipe!" />
+				<ul>
+					<li><a href="#">Clear Stored Data</a></li>
+					<li><a href="#">Display Data</a></li>
+				</ul>
+		</form>
+	</body>
+</html>
