@@ -77,7 +77,7 @@ window.addEventListener("DOMContentLoaded", function(){
 			case "on":
 				$("addRecipe").style.display = "none";
 				$("clear").style.display = "inline";
-				$("display").style.dipslay = "none";
+				$("display").style.display = "none";
 				$("addNewRecipe").style.display = "inline";
 				break;
 			case "off":
@@ -139,6 +139,17 @@ window.addEventListener("DOMContentLoaded", function(){
 				var optNewSubText = newObj[n][0] + " " + newObj[n][1]; // 
 				makeNewSubli.innerHTML = optNewSubText;
 			}
+		}
+	}
+	
+	function deleteLocalRecipes(){
+		if(localStorage.length === 0){
+			alert("There are no recipes in your local storage.")
+		}else{
+			localStorage.clear()
+			alert("Your recipes have been deleted.");
+			window.locations.reload();
+			return false;
 		}
 	}
 	
