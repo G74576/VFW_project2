@@ -72,6 +72,26 @@ window.addEventListener("DOMContentLoaded", function(){
 		}
 	}
 	
+	function toggleControls(n){
+		switch(n){
+			case "on":
+				$("addRecipe").style.display = "none";
+				$("clear").style.display = "inline";
+				$("display").style.dipslay = "none";
+				$("addNewRecipe").style.display = "inline";
+				break;
+			case "off":
+				$("addRecipe").style.display = "block";
+				$("clear").style.display = "inline";
+				$("display").style.dipslay = "inline";
+				$("addNewRecipe").style.display = "none";
+				$("items").style.display = "none";
+				break;
+			default:
+				return false;
+		}
+	}
+	
 	// Store data to local storage with unique Id of random number
 	function storeNewRecipe(){
 		var uniqueId 			= Math.floor(Math.random()*1000001);
@@ -97,24 +117,26 @@ window.addEventListener("DOMContentLoaded", function(){
 	}
 	
 	function getRecipes(){
+		toggleControls("on");
 		//Write Data from Local Storage to the browser.
-		var makeNewDiv = document.createElement("div");
-		makeNewDiv.setAttribute("id", "items");
-		var makeNewList = document.createElement("ul");
-		makeNewDiv.appendChild(makeNewList);
-		document.body.appendChild(makeNewDiv);
-		for(var i=0, len=localStorage.length; i<len; i++){
-			var makeNewli = document.createElement("li");
-			makeNewList.appendChild(makeNewli);
-			var key = localStorage.key(i);
-			var value = localStorage.getItem(key);
-			var newObj = JSON.parse(value); //Convert the string from local storage value back to an object by using JSON.parse
-			var makeNewSubList = document.createElement("ul");
-			makeNewli.appendChild(makeNewSubList);
-			for(var n in newObj){
-				var makeNewSubli = document.createElement("li");
-				makeNewSubList.appendChild(makeNewSubli);
-				var optNewSubText = newObj[n][0] + " " + newObj[n][1];
+		var makeNewDiv = document.createElement("div"); 			// Create new div tag
+		makeNewDiv.setAttribute("id", "items"); 					// Sets the attribute of the new div tag
+		var makeNewList = document.createElement("ul"); 			// Creates ad new ul 
+		makeNewDiv.appendChild(makeNewList); 						// Appends the new ul in the new div tag
+		document.body.appendChild(makeNewDiv); 						// Appends the new div tag to the body tag of the doument
+		$("items").style.display = "block";							// Safety just to be sure that the items display
+		for(var i=0, len=localStorage.length; i<len; i++){ 			// Creates loop of local storage
+			var makeNewli = document.createElement("li"); 			// Create a new li
+			makeNewList.appendChild(makeNewli);  					// Appends the new li to the ul tag
+			var key = localStorage.key(i); 							// Sets the key value from local storage
+			var value = localStorage.getItem(key); 					// Sets the value from the key from the local storage
+			var newObj = JSON.parse(value); 						//Convert the string from local storage value back to an object by using JSON.parse
+			var makeNewSubList = document.createElement("ul"); 		// Creates a new sub list to display the objects of the list
+			makeNewli.appendChild(makeNewSubList); 					// Appends the new ul to the li tag
+			for(var n in newObj){ 									// creates a for in loop of the object data
+				var makeNewSubli = document.createElement("li"); 	// Creates a new li item to display the objects in the group
+				makeNewSubList.appendChild(makeNewSubli); 			// Appends the new li to the new ul tag
+				var optNewSubText = newObj[n][0] + " " + newObj[n][1]; // 
 				makeNewSubli.innerHTML = optNewSubText;
 			}
 		}
@@ -130,8 +152,8 @@ window.addEventListener("DOMContentLoaded", function(){
 	//Set Link & Submit Click Events
 	var displayRecipes = $("display");
 	displayRecipes.addEventListener("click", getRecipes);
-	/*var clearRecipes =$("clear");
-	clearRecipes.addEventListener("click", deleteLocalRecipes);*/
+	var clearRecipes =$("clear");
+	clearRecipes.addEventListener("click", deleteLocalRecipes);
 	var saveNewRecipe = $("saveRecipe");
 	saveNewRecipe.addEventListener("click", storeNewRecipe);
 
