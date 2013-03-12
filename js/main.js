@@ -96,6 +96,30 @@ window.addEventListener("DOMContentLoaded", function(){
 		alert("Recipe Has Been Saved!");
 	}
 	
+	function getRecipes(){
+		//Write Data from Local Storage to the browser.
+		var makeNewDiv = document.createElement("div");
+		makeNewDiv.setAttribute("id", "items");
+		var makeNewList = document.createElement("ul");
+		makeNewDiv.appendChild(makeNewList);
+		document.body.appendChild(makeNewDiv);
+		for(var i=0, len=localStorage.length; i<len; i++){
+			var makeNewli = document.createElement("li");
+			makeNewList.appendChild(makeNewli);
+			var key = localStorage.key(i);
+			var value = localStorage.getItem(key);
+			var newObj = JSON.parse(value); //Convert the string from local storage value back to an object by using JSON.parse
+			var makeNewSubList = document.createElement("ul");
+			makeNewli.appendChild(makeNewSubList);
+			for(var n in newObj){
+				var makeNewSubli = document.createElement("li");
+				makeNewSubList.appendChild(makeNewSubli);
+				var optNewSubText = newObj[n][0] + " " + newObj[n][1];
+				makeNewSubli.innerHTML = optNewSubText;
+			}
+		}
+	}
+	
 	// Variable defaults
 	var recipeType = [" --Choose A Type Of Recipe-- ", "Breakfast", "Lunch", "Dinner", "Appetizer", "Dessert", "Drink"],
 		relatedValue,
@@ -104,9 +128,9 @@ window.addEventListener("DOMContentLoaded", function(){
 	recipeCategory();
 
 	//Set Link & Submit Click Events
-	/*var displayRecipes = $("display");
+	var displayRecipes = $("display");
 	displayRecipes.addEventListener("click", getRecipes);
-	var clearRecipes =$("clear");
+	/*var clearRecipes =$("clear");
 	clearRecipes.addEventListener("click", deleteLocalRecipes);*/
 	var saveNewRecipe = $("saveRecipe");
 	saveNewRecipe.addEventListener("click", storeNewRecipe);
