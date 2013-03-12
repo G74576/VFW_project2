@@ -7,13 +7,18 @@ window.addEventListener("DOMContentLoaded", function(){
 
 
 
+	// getElementById Function
+	function $(x){
+		var elementId = document.getElementById(x);
+		return elementId;
+	}
+
+
+	// Variable defaults
 
 
 
-
-
-
-
+	//Set Link & Submit Click Events
 
 
 };
