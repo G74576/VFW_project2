@@ -51,25 +51,14 @@
 			<fieldset id="redipeFieldset">
 				<legend>Your Recipe</legend>
 					<ul id="recipeInfo">
-						<li><label for="type">What type of recipe will this be&#63;</label><br />
-							<select id="type">
-								<optgroup>
-									<option value="breakfast">Breakfast</option>
-									<option value="lunch">Lunch</option>
-									<option value="dinner">Dinner</option>
-									<option value="appetizer">Appetizer</option>
-									<option value="dessert">Dessert</option>
-									<option value="drink">Drink</option>
-								<optgroup>
-							</select>
-						</li>
+						<li id="selectType"><label for="type">What type of recipe will this be&#63;</label><br /></li>
 						<li><label for="range">Select the level of difficulty&#58;</label><br />
 							<small>&#40;Easy&#41;</small><input type="range" min="1" max="10" name="range" id="range" /><small>&#40;Difficult&#41;</small>
 						</li>
 						<li>When do you make this&#63;<br />
 							<small>&#40;Check all that apply&#41;</small>
 						</li>
-							<ul id="whenCooke">
+							<ul id="whenCooked">
 								<li><input type="checkbox" value="Valentines" id="valentines" /><label for="valentines">Valentines</label></li>
 								<li><input type="checkbox" value="Easter" id="easter" /><label for="easter">Easter</label></li>
 								<li><input type="checkbox" value="Halloween" id="halloween" /><label for="halloween">Halloween</label></li>
@@ -87,7 +76,7 @@
 						<input type="hidden" value="true" />
 					</ul>
 			</fieldset>
-				<input type="button" value="Submit Your Recipe!" />
+				<input type="button" value="Submit Your Recipe!" id ="saveRecipe"/><br />
 		</form>
 		<script src="js/main.js" type="text/javascript"></script>
 	</body>
