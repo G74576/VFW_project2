@@ -1,0 +1,41 @@
+/* 	
+	Kevin O'Toole
+	VFW 1303
+	Project 2
+*/
+
+html {
+	background: #6fbfe9;
+	margin: 0px;
+	padding: 0px;
+	min-height: 416px;
+}
+
+/*@font-face{
+	font-family: Harrington;
+	src: url(fonts/Harrington);
+}*/
+
+/* Page Heading for all pages*/
+h1{
+	margin: 0px;
+	padding: 5px;
+	text-align: center;
+	font-family: Harrington, "Times New Roman", Arial;
+	text-shadow: 1px 1px 2px #c9f2ff;
+}
+
+/* Index.html setting */ 
+#compilation{
+	text-align: center;
+	font-family: "Times New Roman", Times, Arial;
+}
+
+#click{
+	text-align: center;
+	font-family: "Times New Roman", Times, Arial;
+}
+
+#button{
+	text-align: center;
+}

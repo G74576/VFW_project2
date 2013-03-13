@@ -38,6 +38,15 @@ window.addEventListener("DOMContentLoaded", function(){
 	}
 	
 	//Get checkbox values.
+	/*var checkboxes = document.getElementById("addRecipe").when;
+	var checkboxValue = function(){
+		for(i=0, c=checkboxes.length; i<c; i++){
+			if(checkboxes[i].checked){
+				whenCookedValue = checkboxes[i].value;
+			}
+		}
+	}*/ //Play around with this some more when i have time to see if i can get it to work.
+	
 	function getCheckboxValues(){
 		whenCookedValue = [];
 		if($("valentines").checked){
@@ -67,8 +76,6 @@ window.addEventListener("DOMContentLoaded", function(){
 		if($("other").checked){
 			var oth = $("other").value + ": " + $("specify").value ;
 			whenCookedValue.push(oth);
-		}else{
-			whenCookedValue = "No specific time when you would cook this."
 		}
 	}
 	
@@ -116,8 +123,15 @@ window.addEventListener("DOMContentLoaded", function(){
 		alert("Recipe Has Been Saved!");
 	}
 	
+	function refreshWindow(){
+		window.location.reload();
+	}
+	
 	function getRecipes(){
 		toggleControls("on");
+		if(localStorage.length === 0){
+			alert("There are no recipes in your local storage.");
+		}
 		//Write Data from Local Storage to the browser.
 		var makeNewDiv = document.createElement("div"); 			// Create new div tag
 		makeNewDiv.setAttribute("id", "items"); 					// Sets the attribute of the new div tag
@@ -148,16 +162,16 @@ window.addEventListener("DOMContentLoaded", function(){
 		}else{
 			localStorage.clear()
 			alert("Your recipes have been deleted.");
-			window.locations.reload();
+			window.location.reload();
 			return false;
 		}
 	}
 	
 	// Variable defaults
-	var recipeType = [" --Choose A Type Of Recipe-- ", "Breakfast", "Lunch", "Dinner", "Appetizer", "Dessert", "Drink"],
-		relatedValue,
-		whenCookedValue = "No specific time when you would cook this."
-	;
+	var recipeType = [" --Choose A Type Of Recipe-- ", "Breakfast", "Lunch", "Dinner", "Appetizer", "Dessert", "Drink"];
+	var	relatedValue;
+	var	whenCookedValue = "No specific time when you would cook this.";
+	
 	recipeCategory();
 
 	//Set Link & Submit Click Events
@@ -167,5 +181,5 @@ window.addEventListener("DOMContentLoaded", function(){
 	clearRecipes.addEventListener("click", deleteLocalRecipes);
 	var saveNewRecipe = $("saveRecipe");
 	saveNewRecipe.addEventListener("click", storeNewRecipe);
-
+	saveNewRecipe.addEventListener("click", refreshWindow);
 });
