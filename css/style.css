@@ -49,8 +49,84 @@ h1{
 #subHead{
 	text-align: center;
 	font-weight: normal;
+	font-family: "Times New Roman", Times, Arial;
 }
 
+/* 
+	Form css
+*/
 fieldset{
-	background: #9cdafb;
+	background: #99ff99;
+	border: 1px solid black;
+	font-family: "Times New Roman", Times, Arial;
+}
+
+legend{
+	font-weight: bold;
+	font-size: 16px;
+	font-family: "Times New Roman", Times, Arial;
+}
+
+/*
+	Contact information css
+*/
+#fname, #lname, #todaysDate, #email{
+	display: block;
+ 	width: 200px;
+}
+
+/*
+	Recipe information css
+*/
+
+#specify{
+	display: block;
+	width: 158px;
+}
+
+#time, #temperature, #directions{
+	display: block;
+ 	width: 200px;
+}
+
+#saveRecipe{
+	width: 200px;
+	font-family: "Times New Roman", Times, Arial;
+	font-size: 16px;
+	font-weight: bold;
+	text-align: center;
+}
+
+div{
+	text-align: center;
+	margin: 5px;
+}
+
+/* 
+	Footer css
+*/
+
+footer{
+	margin: 5px;
+	text-align: center;
+}
+
+/*
+	Navigation css
+*/
+
+#clear, #display, #addNewRecipe{
+	color: #000;
+	font-family: "Times New Roman", Times, Arial;
+	font-size: 16px;
+	font-weight: bold;
+	margin: 5px;
+}
+
+#clear:hover, #display:hover, #addNewRecipe:hover{
+	color: #fff;
+	font-family: "Times New Roman", Times, Arial;
+	font-size: 16px;
+	font-weight: bold;
+	margin: 5px;
 }
