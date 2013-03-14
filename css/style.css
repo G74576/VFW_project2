@@ -18,12 +18,13 @@ html {
 	Page Heading for all pages
 */
 h1{
-	margin: 0px;
-	padding: 5px;
+	display: block;
+	padding: 10px 0px 0px 0px;
+	margin: 10px 0px 0px 0px;
 	text-align: center;
-	font-family: Harrington, "Times New Roman", Arial;
+	/*font-family: Harrington, "Times New Roman", Arial;
 	font-weight: bold;
-	text-shadow: 1px 1px 2px #c9f2ff;
+	text-shadow: 1px 1px 2px #c9f2ff;*/
 }
 
 /* 
@@ -105,7 +106,6 @@ div{
 /* 
 	Footer css
 */
-
 footer{
 	margin: 5px;
 	text-align: center;
@@ -114,7 +114,6 @@ footer{
 /*
 	Navigation css
 */
-
 #clear, #display, #addNewRecipe{
 	color: #000;
 	font-family: "Times New Roman", Times, Arial;
