@@ -4,6 +4,9 @@
 	Project 2
 */
 
+/*
+	Background color
+*/
 html {
 	background: #6fbfe9;
 	margin: 0px;
@@ -11,21 +14,21 @@ html {
 	min-height: 416px;
 }
 
-/*@font-face{
-	font-family: Harrington;
-	src: url(fonts/Harrington);
-}*/
-
-/* Page Heading for all pages*/
+/* 
+	Page Heading for all pages
+*/
 h1{
 	margin: 0px;
 	padding: 5px;
 	text-align: center;
 	font-family: Harrington, "Times New Roman", Arial;
+	font-weight: bold;
 	text-shadow: 1px 1px 2px #c9f2ff;
 }
 
-/* Index.html setting */ 
+/* 
+	index.html css
+*/ 
 #compilation{
 	text-align: center;
 	font-family: "Times New Roman", Times, Arial;
@@ -38,4 +41,16 @@ h1{
 
 #button{
 	text-align: center;
+}
+
+/*
+	additem.html css
+*/
+#subHead{
+	text-align: center;
+	font-weight: normal;
+}
+
+fieldset{
+	background: #9cdafb;
 }
